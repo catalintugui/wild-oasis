@@ -117,7 +117,9 @@ function CreateCabinForm() {
             },
           })}
         />
-        {errors?.name?.message && <Error>{errors.name.message}</Error>}
+        {errors?.regularPrice?.message && (
+          <Error>{errors.regularPrice.message}</Error>
+        )}
       </FormRow>
 
       <FormRow>
@@ -134,7 +136,7 @@ function CreateCabinForm() {
               "Discount should be less than regular price",
           })}
         />
-        {errors?.name?.message && <Error>{errors.name.message}</Error>}
+        {errors?.discount?.message && <Error>{errors.discount.message}</Error>}
       </FormRow>
 
       <FormRow>
@@ -146,7 +148,9 @@ function CreateCabinForm() {
           disabled={isCreating}
           {...register("description")}
         />
-        {errors?.name?.message && <Error>{errors.name.message}</Error>}
+        {errors?.description?.message && (
+          <Error>{errors.description.message}</Error>
+        )}
       </FormRow>
 
       <FormRow>
