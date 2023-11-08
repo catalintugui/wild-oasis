@@ -62,7 +62,8 @@ function CreateCabinForm() {
   });
 
   function onSubmit(data) {
-    mutate(data);
+    mutate({ ...data, image: data.image[0] });
+    // console.log(data);
   }
 
   function onError(errors) {
@@ -132,7 +133,7 @@ function CreateCabinForm() {
           {...register("discount", {
             required: "This field is required",
             validate: (value) =>
-              value >= getValues().regularPrice ||
+              value <= +getValues().regularPrice ||
               "Discount should be less than regular price",
           })}
         />
@@ -159,7 +160,6 @@ function CreateCabinForm() {
           id="image"
           accept="image/*"
           disabled={isCreating}
-          type="file"
           {...register("image", {
             required: "An image is required",
           })}
