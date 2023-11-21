@@ -52,6 +52,7 @@ const Button = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
+  padding: 1.2rem 1rem;
 
   ${(props) => sizes[props.sizes]}
 
