@@ -54,7 +54,7 @@ const Button = styled.button`
   box-shadow: var(--shadow-sm);
   padding: 1.2rem 1rem;
 
-  ${(props) => sizes[props.sizes]}
+  ${(props) => sizes[props.size]}
 
   ${(props) => variations[props.variation]}
 `;
